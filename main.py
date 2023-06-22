@@ -14,6 +14,7 @@ def main():
             continue
         print(f"the '{item['char']} character appeared {item['num']} times.")
 
+    print()
     print(" --- End Report ---")
 
     
@@ -41,8 +42,8 @@ def sort_on(d):
 def char_dict_to_sorted_dict(nums_char_dict):
     sorted_chars = []
     for ch in nums_char_dict:
-        sorted_chars.append({"char:", ch, "num:", nums_char_dict[ch]})
-    sorted_chars.sort(reverse=True)
+        sorted_chars.append({"char": ch, "num": nums_char_dict[ch]})
+    sorted_chars.sort(reverse=True, key=sort_on)
     return sorted_chars
 
 main()
